@@ -1,0 +1,22 @@
+
+
+
+body {
+	background-image: url(../images/upsetlady3.jpeg); 
+	background-size: 100%;
+	background-repeat: no-repeat;
+	float: right;
+}
+
+#gifts {
+	border: 1px solid black;
+}
+
+
+h1 {
+	padding: 30px;
+	font-size: 40px;
+	color: white;
+	font-weight: bold;
+	font-family: 'Comfortaa', cursive;
+}
