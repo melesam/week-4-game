@@ -20,3 +20,36 @@ h1 {
 	font-weight: bold;
 	font-family: 'Comfortaa', cursive;
 }
+
+#scoreboard {
+	width: 50%;
+	height: 50%;
+	text-align: center;
+	font-size: -webkit-xxx-large;
+	color: white;
+	font-family: 'Comfortaa', cursive;	
+}
+
+#wins{
+	padding: 20px;
+}
+
+#guessedNumber{
+	width: 50%;
+	height: 50%;
+	text-align: left;
+	padding: 20px;
+	font-size: -webkit-xxx-large;
+	color: white;
+	font-family: 'Comfortaa', cursive;
+}
+
+#restart{
+	float: right;
+	text-align: center;
+	padding: 22px;
+	margin: 30px;
+	border: solid black;
+	background-color: lightblue;
+	color: gray;
+}

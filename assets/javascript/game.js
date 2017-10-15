@@ -1,16 +1,16 @@
 
-$(document).ready(function (){
-
-});
+$(document).ready(function(){
 
 
-
-var targetNumber = 9600
-
-$("number-to-guess").text(targetNumber)
-
+var targetNumber = 1900
 var counter = 0
-var numberOptions = [7000, 800, 500, 15000]
+var wins = 1
+var losses = 1
+var numberOptions = [800, 500, 100, 1200]
+var increment = numberOptions[Math.random()];
+
+
+
 
 for (var i = 0; i < numberOptions.length; i++){
 
@@ -28,8 +28,34 @@ for (var i = 0; i < numberOptions.length; i++){
 }
 
 
-var increment = numberOptions[Math.random()];
 
+function startGame(){
+
+	counter = 0;
+	$("guessedNumber").text(targetNumber);
+
+	function randomIntFromInterval(min,max){
+		return Math.floor(Math.random()*(max-min)+1);
+
+	var guessedNumber = randomIntFromInterval(20,000);
+
+	$(".amount").text(guessedNumber);
+
+	$("#gifts").on('click', function(){
+		counter = counter + parseInt($(this).data("num"));
+		$("#total-score").text(counter);
+
+
+	});	
+	}					
+
+
+
+}
+
+
+
+startGame();
 
 $(".gift-image").on("click", function() {
 	console.log("button was clicked");
@@ -42,19 +68,37 @@ $(".gift-image").on("click", function() {
 	alert("Amount spent $" + counter);
 
 	if (counter === targetNumber) {
-		 alert("Such a Sweetheart! You know the way to her heart!");
+		 alert("Such a Sweetheart! You know the way to her heart! YOU WIN");
+		 
+		 $("#wins").text("Wins: " + wins); 
+		 wins++ 
+
 
 	}
 
 	else if (counter < targetNumber) {
-		alert("Nice try, but you're still in the dog house!!");
+		alert("Keep trying - you're still in the dog house!!");
 
 	}
 
 	else if (counter > targetNumber) {
-		alert("Whoa, that's a lot! You must have really messed up!!");
+		alert("Whoa, that's a lot! You must've really messed up! YOU LOSE");
+		
+		$("#losses").text("Losses: " + losses); 
+		losses++
+
+
+		startGame()
 	}
 
+
+});
+
+
+$("#restart").on("click", function() {
+	startGame();
+
+});
 
 
 
